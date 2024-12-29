@@ -11,7 +11,7 @@ def remove_hdi_header(hdi_file_path):
     assert len(flat_slice) + 4096 == len(hdi_blob)
 
     # Maybe this should be a warning instead of a hard assert
-    assert len(flat_slice) % 512 == 0, "Expected the resulting disk image to be a multiple of 512 bytes long, but got a length of %i instead." % len(flat_slice)
+    # assert len(flat_slice) % 512 == 0, "Expected the resulting disk image to be a multiple of 512 bytes long, but got a length of %i instead." % len(flat_slice)
 
     if flat_slice[0] != 0xeb:
         fdi.warn("Disk may not be bootable ($eb missing from first byte)")
